@@ -124,7 +124,7 @@ pub fn now() -> f64 {
     let v = js! { return performance.now(); };
     #[cfg(feature = "inaccurate")]
     let v = js! { return Date.now(); };
-    std::convert::TryInto::try_into(v).unwrap()
+    stdweb::unstable::TryInto::try_into(v).unwrap()
 }
 
 #[cfg(feature = "wasm-bindgen")]
@@ -170,7 +170,7 @@ fn get_time() -> f64 {
     #[cfg(all(feature = "stdweb", not(feature = "wasm-bindgen")))]
     {
         let v = js! { return Date.now(); };
-        return v.try_into().unwrap();
+        return stdweb::unstable::TryInto::try_into(v).unwrap();
     }
 }
 
