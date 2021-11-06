@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 use std::ops::{Add, AddAssign, Sub, SubAssign};
 use std::time::Duration;
+use crate::stdweb::unstable::TryInto;
 
 #[derive(Copy, Clone, Debug, PartialEq, PartialOrd, Hash)]
 pub struct Instant(Duration);
