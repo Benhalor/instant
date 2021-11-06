@@ -124,7 +124,7 @@ pub fn now() -> f64 {
     let v = js! { return performance.now(); };
     #[cfg(feature = "inaccurate")]
     let v = js! { return Date.now(); };
-    v.try_into().unwrap()
+    std::convert::TryInto::try_into(v).unwrap()
 }
 
 #[cfg(feature = "wasm-bindgen")]
