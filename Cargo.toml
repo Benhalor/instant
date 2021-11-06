@@ -7,7 +7,7 @@ repository = "https://github.com/sebcrozet/instant"
 readme = "README.md"
 license = "BSD-3-Clause"
 keywords = [ "time", "wasm" ]
-edition = "2018"
+edition = "2021"
 
 [features]
 wasm-bindgen = ["js-sys", "wasm-bindgen_rs", "web-sys"]
